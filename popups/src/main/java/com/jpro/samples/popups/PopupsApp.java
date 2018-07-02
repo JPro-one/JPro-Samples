@@ -59,6 +59,8 @@ public class PopupsApp extends Application {
         });
 
         VBox vbox = new VBox(buttonJFoenix, controlsFXNotifications(), ownDialogeButton());
+        vbox.setAlignment(Pos.CENTER);
+        vbox.setSpacing(20);
 
         stackpane.getChildren().add(vbox);
 
@@ -76,13 +78,13 @@ public class PopupsApp extends Application {
     Button controlsFXNotifications() {
         Button button = new Button("ControlsFX");
 
-        Notifications notificationBuilder = Notifications.create()
-                .title("Title Text")
-                .text("Some text")
-                .position(Pos.CENTER)
-                .onAction(e -> System.out.println("Notification clicked on!"));
 
         button.setOnAction(e -> {
+            Notifications notificationBuilder = Notifications.create()
+                    .title("Title Text")
+                    .text("Some text")
+                    .owner(button)
+                    .position(Pos.CENTER);
             notificationBuilder.showConfirm();
         });
 
@@ -97,5 +99,5 @@ public class PopupsApp extends Application {
         return btn;
     }
 
-
 }
+

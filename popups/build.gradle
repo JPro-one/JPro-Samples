@@ -37,4 +37,4 @@ compileJava {
 apply plugin: 'com.sandec.jpro'
 
 
-mainClassName = 'com.jpro.samples.PopUps'
+mainClassName = 'com.jpro.samples.popups.PopupsApp'
