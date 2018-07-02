@@ -11,7 +11,8 @@ Samples:
 
   Sample | description
   -------|-------------
-  popups | Shows how to use popups with jpro
+  popups | Shows how to use popups with jpro.
+  filehandler | Shows how to upload and download files.
 
 
 

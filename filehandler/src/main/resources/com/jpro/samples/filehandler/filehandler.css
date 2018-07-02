@@ -1,0 +1,16 @@
+
+.file-handler {
+  -fx-alignment: center;
+  -fx-pref-width: 300;
+  -fx-padding: 50 0 50 0;
+  -fx-border-color: #999;
+  -fx-border-style: dotted;
+  -fx-background-color: #ffffff01;
+  -fx-border-width: 4;
+  -fx-text-alignment: center;
+}
+
+.file-handler.file-drag {
+  -fx-background-color: #DDD;
+  -fx-border-color: #555;
+}
