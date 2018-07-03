@@ -21,6 +21,7 @@ Samples:
 
 ```
 ./gradlew popups:jproRun
+./gradlew filehandler:jproRun
 ```
 
 
