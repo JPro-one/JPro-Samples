@@ -1,0 +1,41 @@
+
+
+buildscript {
+    repositories {
+        jcenter()
+
+        maven {
+            url "http://sandec.bintray.com/repo"
+        }
+    }
+
+    dependencies {
+        classpath 'com.sandec.jpro:jpro-plugin-gradle:2018.1.6'
+    }
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+dependencies {
+
+}
+
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+apply plugin: 'com.sandec.jpro'
+
+jpro {
+    openingPath = "/html-jpro.html"
+}
+
+mainClassName = 'com.jpro.samples.htmljpro.HTMLJProSample'

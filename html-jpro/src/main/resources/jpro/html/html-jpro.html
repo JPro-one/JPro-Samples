@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>JPro-HTML integration!</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link href="/jpro/img/favicon.png" rel="icon">
+    <link rel="stylesheet" type="text/css" href="/jpro/css/jpro.css">
+    <script src="/jpro/js/jpro.js" type="text/javascript"></script>
+
+
+    <style>
+
+        body {
+          background-color: #F7F5FB;
+        }
+
+        .row {
+            padding: 50 0 0 0;
+            display: flex;
+            max-width: 1000px;
+        }
+
+        .htmlcontent {
+            background-color: #C2FCF7;
+        }
+        .jprocontent {
+          background-color: #909CC2;
+        }
+        .jprocontent, .htmlcontent {
+          flex: 50%;
+        }
+        .app {
+          width: 100%;
+          display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<center>
+  <div class="row">
+    <div class="htmlcontent">
+        I AM HTML!<br/>
+        <input id="textfield" type="text"/>
+    </div>
+    <div class="jprocontent"><jpro-app class="app" href="localhost:8080/app/default" /></div>
+  </div>
+</center>
+
+<script type="text/javascript">
+// Whenever the html-textfield is changed,
+// we send a message to the JPro-server
+// with the new value.
+var textfield = document.getElementById('textfield');
+textfield.oninput = function() {
+  console.log("value: " + textfield.value);
+  jpro.setTextField(textfield.value);
+};
+</script>
+
+</body>
+</html>
