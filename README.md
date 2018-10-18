@@ -1,6 +1,6 @@
 # JPro-Samples
 
-[![Build Status](https://travis-ci.org/jpro-one/JPro-Samples.svg?branch=master)](https://travis-ci.org/jpro-one/JPro-Samples)
+[![Build Status](https://travis-ci.org/jpro-one/JPro-Samples.svg?branch=master)](https://travis-ci.org/JPro-one/JPro-Samples)
 
 This project contains multiple samples for [jpro, which enables javafx in the web.](https://www.jpro.one/)
 
