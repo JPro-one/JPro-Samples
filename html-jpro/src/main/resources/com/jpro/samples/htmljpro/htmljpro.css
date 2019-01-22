@@ -3,4 +3,13 @@
   -fx-background-color: transparent;
   -fx-alignment: center;
   -fx-padding: 20;
+  -fx-spacing: 20;
+}
+
+.headline {
+  -fx-font-size: 24;
+}
+
+.html-view {
+  -fx-background-color: #00000011;
 }
