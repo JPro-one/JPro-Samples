@@ -23,7 +23,7 @@ apply plugin: 'java'
 apply plugin: 'application'
 
 dependencies {
-
+    compile group: 'org.apache.commons', name: 'commons-text', version: '1.6'
 }
 
 
