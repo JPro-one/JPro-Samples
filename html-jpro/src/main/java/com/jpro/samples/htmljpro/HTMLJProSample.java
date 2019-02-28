@@ -68,17 +68,39 @@ public class HTMLJProSample extends JProApplication {
         htmlContent1.getStyleClass().add("html-view");
         content.getChildren().add(htmlContent1);
 
+
         /*
-         * Let's add some HTML-Content in a iframe
+         * Let's add scrollable HTML-Content
          */
-        String content2 = "<h1>H1 in iframe!</h1>I'm inside an iframe. I have my own scope. I dont share the outer css files. I work more like WebView, because i behave more like an own browser window.";
-        String contentEncoded = StringEscapeUtils.escapeHtml4(content2);
-        String contentIframe = "<iframe frameborder=\"0\" style=\"width: 100%; height: 100%;\" srcdoc=\""+contentEncoded+"\"> </iframe>";
+        String content2 = "<div style=\"overflow-y: scroll; height: 100%;\"><h1>Scrollable HTMLView!</h1>I have the same javascript and css-environment as the page.</div>";
         HTMLView htmlContent2 = new HTMLView(content2);
-        htmlContent2.setMinHeight(140);
+        htmlContent2.setMinHeight(80);
         htmlContent2.getStyleClass().add("html-view");
         content.getChildren().add(htmlContent2);
 
+        /*
+         * Let's add some HTML-Content in a iframe
+         */
+        String content3 = "<h1>H1 content in iframe!</h1>I'm inside an iframe. I have my own scope. I dont share the outer css files. I work more like WebView, because i behave more like an own browser window.";
+        String contentEncoded = StringEscapeUtils.escapeHtml4(content3);
+        String contentIframe = "<iframe frameborder=\"0\" style=\"width: 100%; height: 100%;\" srcdoc=\""+contentEncoded+"\"> </iframe>";
+        HTMLView htmlContent3 = new HTMLView(contentIframe);
+        htmlContent3.setMinHeight(100);
+        htmlContent3.getStyleClass().add("html-view");
+        content.getChildren().add(htmlContent3);
+
+
+
+        /*
+         * Let's embed the content of another website into our application.
+         */
+        content.getChildren().add(new Label("This is an IFrame, showing and external website:"));
+        String url = "https://openjfx.io/";
+        String contentIframe2 = "<iframe frameborder=\"0\" style=\"width: 100%; height: 100%;\" src=\""+url+"\"> </iframe>";
+        HTMLView htmlContent4 = new HTMLView(contentIframe2);
+        htmlContent4.setMinHeight(300);
+        htmlContent4.getStyleClass().add("html-view");
+        content.getChildren().add(htmlContent4);
 
         Scene scene = new Scene(content, Color.TRANSPARENT);
         scene.getStylesheets().add("/com/jpro/samples/htmljpro/htmljpro.css");
