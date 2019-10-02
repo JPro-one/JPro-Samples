@@ -33,8 +33,8 @@ dependencies {
     compile "org.openjfx:javafx-media:11:$platform"
     compile "org.openjfx:javafx-web:11:$platform"
 
-    compile 'com.jfoenix:jfoenix:8.0.8'
-    compile group: 'org.controlsfx', name: 'controlsfx', version: '8.40.14'
+    compile 'com.jfoenix:jfoenix:9.0.8'
+    compile group: 'org.controlsfx', name: 'controlsfx', version: '11.0.0'
 }
 
 

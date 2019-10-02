@@ -67,8 +67,6 @@ public class PopupsApp extends Application {
 
 
         Scene scene = new Scene(stackpane, 500, 500);
-        scene.getStylesheets().add(getClass().getResource("/css/jfoenix-design.css").toExternalForm());
-        scene.getStylesheets().add(getClass().getResource("/css/jfoenix-fonts.css").toExternalForm());
 
         stage.setScene(scene);
         stage.show();
