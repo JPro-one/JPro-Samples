@@ -41,7 +41,7 @@ public class FileHandler extends Label {
                 }
             }
         });
-        fileHandler.selectedFileProperty().addListener((obs,oldV,newV) -> {
+        fileHandler.setOnFileSelected((file) -> {
             updateText();
             fileHandler.uploadFile();
         });
