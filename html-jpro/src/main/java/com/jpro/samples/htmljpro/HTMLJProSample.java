@@ -59,6 +59,17 @@ public class HTMLJProSample extends JProApplication {
         content.getChildren().add(field);
 
 
+        content.getChildren().add(new Label("This is html text fields based on HTMLView." +
+                "They are bound through a bidirectional binding."));
+
+        HTMLTextfield field1 = new HTMLTextfield("Initial Text");
+        HTMLTextfield field2 = new HTMLTextfield("Initial Text");
+        field1.contentProperty.bindBidirectional(field2.contentProperty);
+        content.getChildren().add(field1);
+        content.getChildren().add(field2);
+
+
+
         /*
          * Let's add some HTML-Content
          */
