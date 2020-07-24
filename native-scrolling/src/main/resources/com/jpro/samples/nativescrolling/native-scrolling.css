@@ -1,0 +1,18 @@
+.root {
+  -fx-padding: 20;
+  -fx-alignment: center;
+  -fx-spacing: 20
+}
+
+.button {
+  -fx-font-size: 20;
+  -fx-pref-width: 200;
+}
+
+.label {
+  -fx-pref-width: 400;
+  -fx-font-size: 25;
+  -fx-padding: 20;
+  -fx-background-radius: 20;
+  -fx-background-color: lightblue;
+}
