@@ -38,6 +38,5 @@ public class FileHandlerApp extends JProApplication {
         scene.getStylesheets().add("/com/jpro/samples/filehandler/filehandler.css");
         stage.setScene(scene);
         stage.show();
-
     }
 }
