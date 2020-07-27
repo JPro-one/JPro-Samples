@@ -1,0 +1,23 @@
+.root {
+  -fx-background: white;
+  -fx-alignment: center;
+  -fx-spacing: 50
+}
+
+.header {
+  -fx-alignment: center;
+  -fx-background-color: #ddddff;
+}
+.header-label {
+  -fx-font-size: 30;
+  -fx-pref-width: 160;
+  -fx-text-fill: black;
+  -fx-padding: 20;
+}
+
+.content {
+  -fx-alignment: center;
+}
+.content-label {
+  -fx-font-size: 34;
+}
