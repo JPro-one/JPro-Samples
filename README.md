@@ -26,6 +26,8 @@ Samples:
 ./gradlew popups:jproRun
 ./gradlew filehandler:jproRun
 ./gradlew html-jpro:jproRun
+./gradlew native-scrolling:jproRun
+./gradlew website:jproRun
 ```
 
 
