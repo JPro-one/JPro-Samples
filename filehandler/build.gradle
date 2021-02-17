@@ -31,8 +31,7 @@ javafx {
     modules = [ 'javafx.base', 'javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web' ]
 }
 
-dependencies {compile 'com.jfoenix:jfoenix:8.0.4'
-    compile group: 'org.controlsfx', name: 'controlsfx', version: '8.40.14'
+dependencies {
 }
 
 
