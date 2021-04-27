@@ -3,6 +3,7 @@ package com.jpro.samples.popups;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
+import com.jpro.webapi.JProApplication;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -18,7 +19,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
 
-public class PopupsApp extends Application {
+public class PopupsApp extends JProApplication {
 
     StackPane stackpane = null;
 
@@ -41,10 +42,9 @@ public class PopupsApp extends Application {
 
         JFXDialogLayout layout = new JFXDialogLayout();
         layout.setHeading(new Label("Dialoge"));
-        layout.setBody(new Label("text text text"
-                + " text text text"
-                + " text text text"
-                + " text text text"));
+        layout.setBody(new Label("text text text\n"
+                + "text text text\n"
+                + "text text text"));
         JFXButton closeButton = new JFXButton("ACCEPT");
         closeButton.getStyleClass().add("dialog-accept");
         closeButton.setOnAction(event -> jfxdialog.close());
@@ -58,7 +58,17 @@ public class PopupsApp extends Application {
             jfxdialog.show(stackpane);
         });
 
-        VBox vbox = new VBox(buttonJFoenix, controlsFXNotifications(), ownDialogeButton());
+        Button stageAsTabButton = new Button("Open Stage as Tab");
+        stageAsTabButton.setOnAction(e -> {
+            getWebAPI().openStageAsTab(createTestStage());
+        });
+
+        Button stageAsPopupButton = new Button("Open Stage as Popup");
+        stageAsPopupButton.setOnAction(e -> {
+            getWebAPI().openStageAsPopup(createTestStage());
+        });
+
+        VBox vbox = new VBox(buttonJFoenix, controlsFXNotifications(), ownDialogeButton(), stageAsTabButton, stageAsPopupButton);
         vbox.setAlignment(Pos.CENTER);
         vbox.setSpacing(20);
 
@@ -95,6 +105,14 @@ public class PopupsApp extends Application {
             new OwnPopup(stackpane, "My own popup!").show();
         });
         return btn;
+    }
+
+    Stage createTestStage() {
+        Stage stage = new Stage();
+        Label label = new Label("Test Stage!");
+        label.setFont(new Font(36));
+        stage.setScene(new Scene(label));
+        return stage;
     }
 
 }
