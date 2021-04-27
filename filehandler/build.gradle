@@ -6,7 +6,7 @@ buildscript {
         gradlePluginPortal()
 
         maven {
-            url "http://sandec.bintray.com/repo"
+            url "https://sandec.jfrog.io/artifactory/repo"
         }
     }
 
