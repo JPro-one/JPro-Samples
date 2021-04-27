@@ -35,7 +35,7 @@ public class FileHandlerApp extends JProApplication {
         root.setSpacing(50);
         root.setAlignment(Pos.CENTER);
         Scene scene = new Scene(root, 500, 500);
-        scene.getStylesheets().add("/com/jpro/samples/filehandler/filehandler.css");
+        root.getStylesheets().add(getClass().getResource("/com/jpro/samples/filehandler/filehandler.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

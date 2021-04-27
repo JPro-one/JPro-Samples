@@ -38,7 +38,7 @@ public class FileHandler extends Label {
     private void updateText() {
         String percentages = "";
         percentages = (int) (fileHandler.getProgress() * 100) + "%";
-        setText(fileHandler.selectedFileProperty() + percentages);
+        setText(fileHandler.selectedFileProperty().getValue() + percentages);
     }
 
 }
