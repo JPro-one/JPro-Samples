@@ -9,13 +9,13 @@ This project contains multiple samples for [jpro, which enables javafx in the we
 Samples:
 
 
-  Sample | description
-  -------|-------------
-  popups | Shows how to use popups with JPro.
-  filehandler | Shows how to upload and download files.
-  html-jpro | A small sample, which shows how to use the WebAPI to communicate between JPro and a html-site.
-  native-scrolling | A small sample on how to use native scrolling.
-  website | A minimalistic website with multiple pages. It uses our library [jpro-web](https://github.com/Sandec/jpro-web)
+  Sample | description | Demo
+  -------|-------------|-------
+  popups | Shows how to use popups with JPro. | [link](https://www.jfx-ensemble.com/?page=sample/jpro-samples/PopupsApp)
+  filehandler | Shows how to upload and download files. |  [link](https://www.jfx-ensemble.com/?page=sample/jpro-samples/FileHandlerApp)
+  html-jpro | A small sample, which shows how to use the WebAPI to communicate between JPro and a html-site. | ---
+  native-scrolling | A small sample on how to use native scrolling. | ---
+  website | A minimalistic website with multiple pages. It uses our library [jpro-web](https://github.com/Sandec/jpro-web) | ---
 
 
 
@@ -29,6 +29,7 @@ Samples:
 ./gradlew native-scrolling:jproRun
 ./gradlew website:jproRun
 ```
+
 
 
 Links:
