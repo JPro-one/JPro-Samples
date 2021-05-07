@@ -62,3 +62,36 @@ jpro {
 
   openingPath = ""
 }
+
+configure([project(':filehandler'),project(':popups')]) {
+  apply plugin: 'java'
+  apply plugin: 'maven-publish'
+
+  java {
+    withSourcesJar()
+  }
+
+  publishing {
+    publications {
+      mavenJava(MavenPublication) {
+        from components.java
+        groupId "one.jpro.samples"
+        artifactId project.name
+        version JPRO_SAMPLES_VERSION
+      }
+    }
+    java {
+      withSourcesJar()
+    }
+    repositories {
+      maven {
+        name = "artifactory"
+        url = "https://sandec.jfrog.io/artifactory/repo"
+        credentials {
+          username System.getenv("SANDEC_ARTIFACTORY_USERNAME")
+          password System.getenv("SANDEC_ARTIFACTORY_PASSWORD")
+        }
+      }
+    }
+  }
+}

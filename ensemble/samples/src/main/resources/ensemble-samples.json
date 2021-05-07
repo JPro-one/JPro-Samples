@@ -1,0 +1,20 @@
+{
+  "samples": [
+    {
+      "category": "jpro-samples",
+      "name": "FileHandlerApp",
+      "desc": "Sample for #JPro about uploading and downloading files.",
+      "project": "jpro-samples",
+      "preview": "/filehandler-preview.png",
+      "classname": "com.jpro.samples.filehandler.FileHandlerApp"
+    },
+    {
+      "category": "jpro-samples",
+      "name": "PopupsApp",
+      "desc": "Sample for #JPro about showing Popups and opening Stages.",
+      "project": "jpro-samples",
+      "preview": "/popup-preview.png",
+      "classname": "com.jpro.samples.popups.PopupsApp"
+    }
+  ]
+}

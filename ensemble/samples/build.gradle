@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+        jcenter()
+        gradlePluginPortal()
+
+        maven {
+            url "https://sandec.jfrog.io/artifactory/repo"
+        }
+    }
+
+    dependencies {
+        classpath "com.sandec.jpro:jpro-plugin-gradle:$JPRO_VERSION"
+        classpath 'org.openjfx:javafx-plugin:0.0.9'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+repositories {
+    jcenter()
+    maven {
+        url "https://sandec.jfrog.io/artifactory/repo"
+    }
+}
+
+dependencies {
+    compile project(":filehandler")
+    compile project(":popups")
+}
+apply plugin: 'maven-publish'
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            groupId "one.jpro.samples"
+            artifactId project.name
+            version JPRO_SAMPLES_VERSION
+        }
+    }
+    repositories {
+        maven {
+            name = "artifactory"
+            url = "https://sandec.jfrog.io/artifactory/repo"
+            credentials {
+                username System.getenv("SANDEC_ARTIFACTORY_USERNAME")
+                password System.getenv("SANDEC_ARTIFACTORY_PASSWORD")
+            }
+        }
+    }
+}
