@@ -14,4 +14,4 @@ jobs:
           architecture: x64
       - name: compile
         run: |
-          ./gradlew clean filehandler:jar html-jpro:jar popups:jar native-scrolling:jar
+          ./gradlew clean filehandler:assemble html-jpro:assemble popups:jar native-scrolling:assemble
