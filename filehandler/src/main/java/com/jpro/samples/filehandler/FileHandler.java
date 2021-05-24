@@ -29,6 +29,9 @@ public class FileHandler extends Label {
             updateText();
             fileHandler.uploadFile();
         });
+        fileHandler.uploadedFileProperty().addListener((p,oldV,newV) -> {
+            System.out.println("Got uploaded file: " + newV);
+        });
 
         fileHandler.progressProperty().addListener((obs,oldV,newV) -> {
             updateText();
