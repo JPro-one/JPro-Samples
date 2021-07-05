@@ -10,6 +10,8 @@ public class Auth0App extends WebApp {
     public Auth0App(Stage stage) {
         super(stage);
 
+        getStylesheets().add("/com/jpro/samples/auth0/app.css");
+
         addRouteJava(s -> {
             if(s.contains("code=")) {
                 String email = new AuthUtil().verify(s.substring(s.lastIndexOf("code=") + "code=".length()));

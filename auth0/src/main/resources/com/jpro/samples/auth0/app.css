@@ -1,0 +1,20 @@
+.vbox {
+  -fx-padding: 50;
+  -fx-spacing: 20;
+  -fx-alignment: top-center;
+}
+
+.label {
+  -fx-font-size: 20px;
+}
+
+.button{
+  -fx-font-size: 20px;
+  -fx-background-color: #cbe3f1;
+  -fx-border-color: grey;
+  -fx-border-width: 1.0;
+  -fx-background-radius: 10;
+  -fx-border-radius: 10;
+  -fx-graphic-text-gap: 10;
+  -fx-pref-width: 200;
+}

@@ -9,6 +9,12 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 public class LandingPage extends View {
+
+    @Override
+    public boolean fullscreen() {
+        return true;
+    }
+
     @Override
     public String title() {
         return "START";
@@ -24,6 +30,8 @@ public class LandingPage extends View {
         Label label = new Label("Hello! click below to login!");
         Button loginButton = new Button("Login");
         Util.setLink(loginButton, new AuthUtil().authURL());
-        return new VBox(label, loginButton);
+        VBox vbox = new VBox(label, loginButton);
+        vbox.getStyleClass().add("vbox");
+        return vbox;
     }
 }

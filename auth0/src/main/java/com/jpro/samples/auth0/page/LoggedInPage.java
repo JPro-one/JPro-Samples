@@ -16,6 +16,11 @@ public class LoggedInPage extends View {
     }
 
     @Override
+    public boolean fullscreen() {
+        return true;
+    }
+
+    @Override
     public String title() {
         return "";
     }
@@ -30,6 +35,8 @@ public class LoggedInPage extends View {
         Label label = new Label("You are logged in as: " + email);
         Button logoutButton = new Button("Logout");
         Util.setLink(logoutButton, new AuthUtil().logoutURL());
-        return new VBox(label, logoutButton);
+        VBox vbox = new VBox(label, logoutButton);
+        vbox.getStyleClass().add("vbox");
+        return vbox;
     }
 }
