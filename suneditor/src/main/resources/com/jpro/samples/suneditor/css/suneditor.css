@@ -1,0 +1,17 @@
+
+.root {
+  -fx-background-color: lightblue;
+  -fx-padding: 20;
+}
+
+.vbox {
+  -fx-background-color: #eeeeee;
+  -fx-background-radius: 20;
+  -fx-padding: 30 30 80 30;
+  -fx-alignment: center;
+  -fx-max-width: 800px;
+}
+
+.title {
+  -fx-font-size: 20px;
+}
