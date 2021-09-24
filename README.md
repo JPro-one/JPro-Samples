@@ -17,6 +17,7 @@ Samples:
   native-scrolling | A small sample on how to use native scrolling. | ---
   website | A minimalistic website with multiple pages. It uses our library [jpro-web](https://github.com/Sandec/jpro-web) | ---
   auth0 | Login with [Auth0](https://auth0.com/). Read the [readme](https://github.com/JPro-one/JPro-Samples/tree/master/auth0) for more details. | ---
+  suneditor | Example on how to integrate a html richtext editor - [suneditor]() in this case. | ---
 
 
 
@@ -30,6 +31,7 @@ Samples:
 ./gradlew native-scrolling:jproRun
 ./gradlew website:jproRun
 ./gradlew auth0:jproRun # Read the Readme: https://github.com/JPro-one/JPro-Samples/tree/master/auth0
+./gradlew suneditor:run
 ```
 
 
