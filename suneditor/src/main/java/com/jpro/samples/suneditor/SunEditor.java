@@ -8,7 +8,6 @@ import javafx.beans.property.StringProperty;
 import javafx.scene.layout.StackPane;
 import org.json.JSONTokener;
 
-
 public class SunEditor extends StackPane {
 
     static int idCounter = 0;
@@ -24,6 +23,8 @@ public class SunEditor extends StackPane {
 
     StringProperty textProperty = new SimpleStringProperty("");
 
+    private String elementContent = textProperty.get();
+
     SunEditor() {
         getChildren().add(htmlView);
         htmlView.setBlockKeyboardInput(true);
@@ -31,16 +32,15 @@ public class SunEditor extends StackPane {
         setOnMouseClicked(e -> requestFocus());
         WebAPI.getWebAPI(this, webAPI -> {
             this.webAPI = webAPI;
-            webAPI.loadCSSFile(getClass().getResource("/com/jpro/samples/suneditor/http/css/suneditor.min.css"));
-            webAPI.loadJSFile(getClass().getResource("/com/jpro/samples/suneditor/http/js/suneditor.min.js"));
-            webAPI.loadJSFile(getClass().getResource("/com/jpro/samples/suneditor/http/js/en.js"));
-            htmlView.setContent("<textarea style=\"width: 100%; height: 100%;\" id=\"" + id + "\">"+textProperty.get()+"</textarea>");
+            webAPI.loadCSSFile(getClass().getResource("/jpro/html/css/suneditor.min.css"));
+            webAPI.loadJSFile(getClass().getResource("/jpro/html/js/suneditor.min.js"));
+            webAPI.loadJSFile(getClass().getResource("/jpro/html/js/en.js"));
+            htmlView.setContent("<textarea id=\"" + id + "\">"+textProperty.get()+"</textarea>");
             Platform.runLater(() -> {
 
                 webAPI.executeScript("var element = document.getElementById('"+id+"');" +
                         "console.log('element: ' + element);" +
                         "var editor = SUNEDITOR.create(element,{\n" +
-                        "resizingBar: false" +
                         "});" +
                         "jpro."+id+"=editor;");
 
@@ -49,6 +49,7 @@ public class SunEditor extends StackPane {
                     JSONTokener tockener = new JSONTokener(str);
                     tockener.nextClean();
                     String str2 = tockener.nextString('"');
+                    elementContent = str2;
                     textProperty.set(str2);
 
                     System.out.println("Got str: " + str2);
@@ -57,9 +58,10 @@ public class SunEditor extends StackPane {
                         "  jpro.callback1_"+id+"(contents);" +
                         "};");
                 textProperty.addListener((ps,os,ns) -> {
-                    String script = "jpro."+id+".setContents(\""+ns.replace("\\","\\\\").replace("\"","\\\"")+"\");";
-
-                    webAPI.executeScript(script);
+                    if(elementContent != ns) {
+                        String script = "jpro."+id+".setContents(\""+ns.replace("\\","\\\\").replace("\"","\\\"")+"\");";
+                        webAPI.executeScript(script);
+                    }
                 });
 
                 widthProperty().addListener((p,o,n) -> updateWH());
