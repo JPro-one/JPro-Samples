@@ -57,8 +57,6 @@ jpro {
   //jpro server port
   port = 8080
 
-  javafxVersion = 16
-
   openingPath = ""
 }
 

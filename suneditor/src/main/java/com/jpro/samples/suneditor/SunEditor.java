@@ -32,9 +32,9 @@ public class SunEditor extends StackPane {
         setOnMouseClicked(e -> requestFocus());
         WebAPI.getWebAPI(this, webAPI -> {
             this.webAPI = webAPI;
-            webAPI.loadCSSFile(getClass().getResource("/jpro/html/css/suneditor.min.css"));
-            webAPI.loadJSFile(getClass().getResource("/jpro/html/js/suneditor.min.js"));
-            webAPI.loadJSFile(getClass().getResource("/jpro/html/js/en.js"));
+            webAPI.loadCSSFile(getClass().getResource("/com/jpro/samples/suneditor/http/css/suneditor.min.css"));
+            webAPI.loadJSFile(getClass().getResource("/com/jpro/samples/suneditor/http/js/suneditor.min.js"));
+            webAPI.loadJSFile(getClass().getResource("/com/jpro/samples/suneditor/http/js/en.js"));
             htmlView.setContent("<textarea id=\"" + id + "\">"+textProperty.get()+"</textarea>");
             Platform.runLater(() -> {
 
