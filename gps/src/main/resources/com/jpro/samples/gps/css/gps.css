@@ -1,0 +1,40 @@
+.vbox {
+  -fx-alignment: center;
+  -fx-max-width: 600;
+}
+.root {
+  -fx-alignment: top-center;
+  -fx-background-radius: 10;
+}
+
+.header {
+  -fx-font-size: 28;
+  -fx-padding: 50 0 50 0;
+}
+
+.request-label {
+  -fx-font-size: 24;
+  -fx-background-color: #cbe3f1;
+  -fx-border-color: grey;
+  -fx-border-width: 1.0;
+  -fx-background-radius: 10;
+  -fx-border-radius: 10;
+
+  -fx-max-width: 300;
+  -fx-padding: 40;
+  -fx-wrap-text: true;
+  -fx-text-alignment: center;
+}
+
+.map {
+  -fx-max-width: 500;
+  -fx-max-height: 500
+}
+
+.button{
+  -fx-font-size: 20px;
+
+
+  -fx-graphic-text-gap: 10;
+  -fx-pref-width: 200;
+}
