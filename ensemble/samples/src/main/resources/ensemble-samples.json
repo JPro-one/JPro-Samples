@@ -15,6 +15,22 @@
       "project": "jpro-samples",
       "preview": "/popup-preview.png",
       "classname": "com.jpro.samples.popups.PopupsApp"
+    },
+    {
+      "category": "jpro-samples",
+      "name": "JPro Suneditor",
+      "desc": "How to integrate a Richtext eidtor into #JPro?",
+      "project": "jpro-samples",
+      "preview": "/suneditor-preview.png",
+      "classname": "com.jpro.samples.suneditor.SunEditorSample"
+    },
+    {
+      "category": "jpro-samples",
+      "name": "JPro GeoLocation",
+      "desc": "Retrieve GPS and show the location on a map!",
+      "project": "jpro-samples",
+      "preview": "/gps-preview.png",
+      "classname": "com.jpro.samples.gps.GPSSample"
     }
   ]
 }
