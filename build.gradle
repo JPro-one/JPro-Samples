@@ -60,7 +60,7 @@ jpro {
   openingPath = ""
 }
 
-configure([project(':filehandler'),project(':popups')]) {
+configure([project(':filehandler'),project(':popups'),project(':suneditor'),project(':gps')]) {
   apply plugin: 'java'
   apply plugin: 'maven-publish'
 

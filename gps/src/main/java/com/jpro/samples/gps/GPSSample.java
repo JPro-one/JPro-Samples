@@ -26,24 +26,22 @@ public class GPSSample extends JProApplication {
         VBox pin = new VBox(requestLabel);
         VBox root = new VBox(header, pin);
 
-        requestLabel.setOnMouseClicked(e -> {
-                pin.getChildren().clear();
-                pin.getChildren().add(new ProgressIndicator());
-                new GPSUtil(WebAPI.getWebAPI(stage)).requestData(result -> {
-                    pin.getChildren().clear();
-                    pin.getChildren().add(createMap(result.longitude,result.latitude));
-                });
-        });
-
         root.getStyleClass().add("root");
         pin.getStyleClass().add("vbox");
 
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("/com/jpro/samples/gps/css/gps.css");
+        root.getStylesheets().add(getClass().getResource("/com/jpro/samples/gps/css/gps.css").toString());
         stage.setScene(scene);
         stage.show();
 
         CSSFX.start();
+
+        requestLabel.setOnMouseClicked(e -> {
+            new GPSUtil(this.getWebAPI()).requestData(result -> {
+                pin.getChildren().clear();
+                pin.getChildren().add(createMap(result.longitude,result.latitude));
+            });
+        });
     }
 
     HTMLView createMap(double longitude, double latitude) {

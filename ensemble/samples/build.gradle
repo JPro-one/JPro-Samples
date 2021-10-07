@@ -27,6 +27,8 @@ repositories {
 dependencies {
     compile project(":filehandler")
     compile project(":popups")
+    compile project(":suneditor")
+    compile project(":gps")
 }
 apply plugin: 'maven-publish'
 publishing {
