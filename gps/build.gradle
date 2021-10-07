@@ -17,13 +17,13 @@ buildscript {
 }
 
 repositories {
+    mavenLocal()
     jcenter()
     mavenCentral()
 }
 
 apply plugin: 'java'
 apply plugin: 'application'
-
 apply plugin: 'org.openjfx.javafxplugin'
 
 javafx {
@@ -32,6 +32,8 @@ javafx {
 }
 
 dependencies {
+    compile "fr.brouillard.oss:cssfx:11.4.0"
+    compile group: 'org.json', name: 'json', version: '20190722'
 }
 
 
@@ -40,8 +42,6 @@ compileJava {
     targetCompatibility = 11
 }
 
-
 apply plugin: 'com.sandec.jpro'
 
-
-mainClassName = 'com.jpro.samples.filehandler.FileHandlerApp'
+mainClassName = 'com.jpro.samples.gps.GPSSample'

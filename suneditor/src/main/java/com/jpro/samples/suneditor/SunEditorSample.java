@@ -23,7 +23,7 @@ public class SunEditorSample extends Application {
         StackPane root = new StackPane(vbox);
         root.getStyleClass().add("root");
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("/com/jpro/samples/suneditor/css/suneditor.css");
+        root.getStylesheets().add(getClass().getResource("/com/jpro/samples/suneditor/css/suneditor.css").toString());
         stage.setScene(scene);
         stage.show();
     }

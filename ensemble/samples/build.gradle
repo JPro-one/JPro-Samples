@@ -10,7 +10,7 @@ buildscript {
 
     dependencies {
         classpath "com.sandec.jpro:jpro-plugin-gradle:$JPRO_VERSION"
-        classpath 'org.openjfx:javafx-plugin:0.0.9'
+        classpath 'org.openjfx:javafx-plugin:0.0.10'
     }
 }
 
@@ -27,6 +27,8 @@ repositories {
 dependencies {
     compile project(":filehandler")
     compile project(":popups")
+    compile project(":suneditor")
+    compile project(":gps")
 }
 apply plugin: 'maven-publish'
 publishing {
