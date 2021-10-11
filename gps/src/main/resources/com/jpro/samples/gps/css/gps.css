@@ -26,6 +26,17 @@
   -fx-text-alignment: center;
 }
 
+.error {
+  -fx-font-size: 24;
+  -fx-background-color: #ffcccc;
+  -fx-text-fill: darkred;
+  -fx-border-color: grey;
+  -fx-border-width: 1.0;
+  -fx-background-radius: 10;
+  -fx-border-radius: 10;
+  -fx-padding: 20;
+}
+
 .map {
   -fx-max-width: 500;
   -fx-max-height: 500

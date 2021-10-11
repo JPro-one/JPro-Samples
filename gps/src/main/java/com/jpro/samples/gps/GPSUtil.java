@@ -17,10 +17,14 @@ public class GPSUtil {
         webAPI.registerJavaFunction("sendGPS", str -> {
             System.out.println("got: " + str);
             JSONObject tocken = new JSONObject(str);
-            GPSData result = new GPSData();
-            result.longitude = tocken.getDouble("longitude");
-            result.latitude = tocken.getDouble("latitude");
-            f.accept(result);
+            if(tocken.isEmpty()) {
+                f.accept(null);
+            } else {
+                GPSData result = new GPSData();
+                result.longitude = tocken.getDouble("longitude");
+                result.latitude = tocken.getDouble("latitude");
+                f.accept(result);
+            }
         });
         webAPI.executeScript("navigator.geolocation.getCurrentPosition(" +
                 "function(v) {jpro.sendGPS({latitude: v.coords.latitude, longitude: v.coords.longitude});}, " +

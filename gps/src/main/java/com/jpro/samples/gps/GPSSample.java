@@ -37,9 +37,18 @@ public class GPSSample extends JProApplication {
         CSSFX.start();
 
         requestLabel.setOnMouseClicked(e -> {
+            pin.getChildren().clear();
+            pin.getChildren().add(new ProgressIndicator());
             new GPSUtil(this.getWebAPI()).requestData(result -> {
-                pin.getChildren().clear();
-                pin.getChildren().add(createMap(result.longitude,result.latitude));
+                if(result == null) {
+                    Label errorLabel = new Label("User denied access to gps data!");
+                    errorLabel.getStyleClass().add("error");
+                    pin.getChildren().clear();
+                    pin.getChildren().add(errorLabel);
+                } else {
+                    pin.getChildren().clear();
+                    pin.getChildren().add(createMap(result.longitude,result.latitude));
+                }
             });
         });
     }
