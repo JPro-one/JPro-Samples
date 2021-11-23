@@ -16,6 +16,8 @@
 
 .label {
   -fx-font-size: 20px;
+  -fx-wrap-text: true;
+  -fx-text-alignment: center;
 }
 
 .button{

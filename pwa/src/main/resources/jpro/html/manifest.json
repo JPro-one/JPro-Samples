@@ -29,8 +29,8 @@
   "lang": "en-US",
   "start_url": "/pwa/index.html",
   "display": "standalone",
-  "background_color": "green",
-  "theme_color": "red",
+  "background_color": "white",
+  "theme_color": "lightblue",
   "related_applications": [{
     "platform": "webapp",
     "url": "http://localhost:8080/manifest.json"
