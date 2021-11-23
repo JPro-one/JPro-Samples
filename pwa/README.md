@@ -1,5 +1,7 @@
 ### PWA
 
+The sample will only work, when the page is served with HTTPS, localhost or an ip of the form 127.x.x.x.
+
 The following files are important:
  - The index.html contains changes to track whether the App is already installed.
  - The PWAUtil file contains the logic to check whether the app is installed and to initiate the install.
