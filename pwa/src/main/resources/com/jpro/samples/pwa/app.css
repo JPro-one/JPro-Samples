@@ -1,0 +1,30 @@
+.root {
+  -fx-padding: 40;
+  -fx-alignment: top-center;
+}
+.vbox {
+  -fx-padding: 50;
+  -fx-spacing: 20;
+  -fx-alignment: top-center;
+  -fx-max-width: 300;
+  -fx-max-height: 400;
+  -fx-background-color: white;
+  -fx-border-color: black;
+  -fx-border-width: 2;
+  -fx-border-radius: 15;
+}
+
+.label {
+  -fx-font-size: 20px;
+}
+
+.button{
+  -fx-font-size: 20px;
+  -fx-background-color: #cbe3f1;
+  -fx-border-color: grey;
+  -fx-border-width: 1.0;
+  -fx-background-radius: 10;
+  -fx-border-radius: 10;
+  -fx-graphic-text-gap: 10;
+  -fx-pref-width: 200;
+}

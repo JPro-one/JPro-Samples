@@ -19,6 +19,7 @@ Samples:
   auth0 | Login with [Auth0](https://auth0.com/). Read the [readme](https://github.com/JPro-one/JPro-Samples/tree/master/auth0) for more details. | ---
   suneditor | Example on how to integrate a html richtext editor - [suneditor]() in this case. | [link](https://www.jfx-ensemble.com/sample/jpro-samples/JPro_Suneditor)
   gps | Shows how to retrieve gps location and use it to show a map. | [link](https://www.jfx-ensemble.co/sample/jpro-samples/JPro_GeoLocation)
+  pwa | Install your Website as a desktop/mobile app! Read the [readme](https://github.com/JPro-one/JPro-Samples/tree/master/pwa) for more details.
 
 
 
