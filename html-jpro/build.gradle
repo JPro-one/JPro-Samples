@@ -32,8 +32,8 @@ javafx {
 }
 
 dependencies {
-    compile group: 'org.apache.commons', name: 'commons-text', version: '1.6'
-    compile group: 'org.json', name: 'json', version: '20190722'
+    implementation group: 'org.apache.commons', name: 'commons-text', version: '1.6'
+    implementation group: 'org.json', name: 'json', version: '20190722'
 }
 
 

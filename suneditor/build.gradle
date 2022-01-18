@@ -32,8 +32,8 @@ javafx {
 }
 
 dependencies {
-    compile "fr.brouillard.oss:cssfx:11.4.0"
-    compile group: 'org.json', name: 'json', version: '20190722'
+    implementation "fr.brouillard.oss:cssfx:11.4.0"
+    implementation group: 'org.json', name: 'json', version: '20190722'
 }
 
 

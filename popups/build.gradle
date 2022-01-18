@@ -31,8 +31,8 @@ javafx {
 }
 
 dependencies {
-    compile 'com.jfoenix:jfoenix:9.0.8'
-    compile group: 'org.controlsfx', name: 'controlsfx', version: '11.0.0'
+    implementation 'com.jfoenix:jfoenix:9.0.8'
+    implementation group: 'org.controlsfx', name: 'controlsfx', version: '11.0.0'
 }
 
 

@@ -31,7 +31,7 @@ javafx {
 }
 
 dependencies {
-    compile "com.sandec.jpro:jpro-web-core:0.8.1"
+    implementation "com.sandec.jpro:jpro-web-core:0.8.1"
 }
 
 

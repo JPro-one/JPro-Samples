@@ -25,10 +25,10 @@ repositories {
 }
 
 dependencies {
-    compile project(":filehandler")
-    compile project(":popups")
-    compile project(":suneditor")
-    compile project(":gps")
+    implementation project(":filehandler")
+    implementation project(":popups")
+    implementation project(":suneditor")
+    implementation project(":gps")
 }
 apply plugin: 'maven-publish'
 publishing {
