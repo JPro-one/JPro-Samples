@@ -7,12 +7,12 @@ public class FileHandler extends Label {
 
     public WebAPI.FileUploader fileHandler = null;
 
-    FileHandler(WebAPI webAPI) {
+    FileHandler() {
         setText("Click or Drop File");
         getStyleClass().add("file-handler");
         setWrapText(true);
 
-        fileHandler = webAPI.makeFileUploadNode(this);
+        fileHandler = WebAPI.makeFileUploadNodeStatic(this);
 
         fileHandler.setSelectFileOnClick(true);
         fileHandler.setSelectFileOnDrop(true);

@@ -13,7 +13,7 @@ public class FileHandlerApp extends JProApplication {
 
     @Override public void start(Stage stage) {
 
-        FileHandler fileHandler = new FileHandler(getWebAPI());
+        FileHandler fileHandler = new FileHandler();
 
 
         Button downloadButton = new Button("Download");
