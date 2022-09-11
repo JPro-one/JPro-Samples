@@ -1,0 +1,7 @@
+.history
+.idea
+.gradle
+bin/
+build/
+logs/
+tmp/

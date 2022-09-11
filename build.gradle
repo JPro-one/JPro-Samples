@@ -16,49 +16,6 @@ buildscript {
   }
 }
 
-repositories {
-  mavenLocal()
-  jcenter()
-}
-
-
-/**
- ******************  Java Configuration ******************
- */
-apply plugin: 'java'
-apply plugin: 'application'
-
-compileJava {
-  sourceCompatibility = 11
-  targetCompatibility = 11
-}
-
-/**
- ******************  jpro Configuration ******************
- */
-apply plugin: 'com.sandec.jpro'
-
-
-/**
- * App Main Class
- */
-mainClassName = 'com.jpro.hellojpro.HelloJPro'
-//mainClassName = 'com.jpro.hellojpro.HelloJProFXML'
-
-/**
- * jpro settings
- */
-jpro {
-  // for debugging
-  // JVMArgs << '-agentlib:jdwp=transport=dt_socket,server=n,address=5006,suspend=y'
-
-  JVMArgs << '-Xmx1000m'
-
-  //jpro server port
-  port = 8080
-
-  openingPath = ""
-}
 
 configure([project(':filehandler'),project(':popups'),project(':suneditor'),project(':gps')]) {
   apply plugin: 'java'
