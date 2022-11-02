@@ -1,5 +1,6 @@
 include "popups"
 include "filehandler"
+include "multifilehandler"
 include "html-jpro"
 include "native-scrolling"
 include "pwa"

@@ -1,0 +1,72 @@
+
+
+.vbox {
+  -fx-background-color: #0000AA10;
+  -fx-alignment: center;
+  -fx-padding: 10;
+  -fx-spacing: 10;
+}
+
+.mf-title {
+  -fx-font-weight: bold;
+  -fx-font-size: 24px;
+  -fx-padding: 10;
+}
+
+.mf-description {
+  -fx-font-size: 16;
+  -fx-padding: 10;
+}
+
+.mf-files-container {
+  -fx-max-width: 500;
+  -fx-pref-height: 400;
+  /* slightly grey background with border */
+  -fx-background-color: #00000009;
+  -fx-border-color: #888;
+  -fx-border-width: 0.5;
+  -fx-border-radius: 8;
+}
+.mf-files-container.file-drag {
+  -fx-background-color: #0000AA10;
+}
+
+.scroll-pane {
+  -fx-background: null;
+}
+
+.mf-files {
+  -fx-padding: 10;
+  -fx-spacing: 10;
+  -fx-alignment: center;
+}
+
+.mf-file-cell {
+  -fx-alignment: center;
+  /* Nice colored background with border */
+  -fx-background-color: #0000AA10;
+  -fx-border-color: #888;
+  -fx-border-width: 0.5;
+  -fx-border-radius: 8;
+  -fx-padding: 10;
+
+  -fx-spacing: 20;
+}
+
+/* Fancy JavaFX Button */
+.mf-download-button {
+  -fx-font-size: 16;
+  -fx-padding: 10;
+  -fx-background-color: #0000AA10;
+  -fx-background-radius: 8;
+  -fx-border-radius: 8;
+  -fx-border-color: #0000AA10;
+}
+.mf-download-button:hover {
+  -fx-background-color: #0000AA20;
+  -fx-border-color: #0000AA20;
+}
+.mf-download-button:pressed {
+  -fx-background-color: #0000AA30;
+  -fx-border-color: #0000AA30;
+}

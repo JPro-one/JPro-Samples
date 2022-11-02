@@ -14,4 +14,4 @@ jobs:
           java-version: '11'
       - name: compile
         run: |
-          ./gradlew clean filehandler:assemble html-jpro:assemble popups:jar native-scrolling:assemble
+          ./gradlew clean multifilehandler:assemble filehandler:assemble html-jpro:assemble popups:jar native-scrolling:assemble
