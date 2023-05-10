@@ -27,3 +27,4 @@ include "ensemble:site"
 include "auth0"
 include "suneditor"
 include "gps"
+include 'logging'
