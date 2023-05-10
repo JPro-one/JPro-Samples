@@ -9,8 +9,8 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.sandec.jpro:jpro-plugin-gradle:$JPRO_VERSION"
-        classpath 'org.openjfx:javafx-plugin:0.0.13'
+        classpath "com.sandec.jpro:jpro-plugin-gradle:2022.1.8"
+        classpath 'org.openjfx:javafx-plugin:0.0.14'
         classpath "com.javafxensemble.website:ensemble-gradle-plugin:0.1.0-SNAPSHOT"
     }
 }

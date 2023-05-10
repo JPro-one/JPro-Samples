@@ -11,8 +11,8 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.sandec.jpro:jpro-plugin-gradle:$JPRO_VERSION"
-        classpath 'org.openjfx:javafx-plugin:0.0.13'
+        classpath "one.jpro:jpro-gradle-plugin:$JPRO_VERSION"
+        classpath 'org.openjfx:javafx-plugin:0.0.14'
     }
 }
 
@@ -47,7 +47,7 @@ compileJava {
     targetCompatibility = 11
 }
 
-apply plugin: 'com.sandec.jpro'
+apply plugin: 'jpro-gradle-plugin'
 
 
 mainClassName = 'com.jpro.samples.auth0.Auth0Starter'

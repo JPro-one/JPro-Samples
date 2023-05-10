@@ -11,8 +11,8 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.sandec.jpro:jpro-plugin-gradle:$JPRO_VERSION"
-        classpath 'org.openjfx:javafx-plugin:0.0.13'
+        classpath "one.jpro:jpro-gradle-plugin:$JPRO_VERSION"
+        classpath 'org.openjfx:javafx-plugin:0.0.14'
     }
 }
 
@@ -32,8 +32,8 @@ javafx {
 }
 
 dependencies {
-    implementation group: 'org.apache.commons', name: 'commons-text', version: '1.6'
-    implementation group: 'org.json', name: 'json', version: '20190722'
+    implementation 'org.apache.commons:commons-text:1.10.0'
+    implementation 'org.json:json:20230227'
 }
 
 
@@ -42,6 +42,6 @@ compileJava {
     targetCompatibility = 11
 }
 
-apply plugin: 'com.sandec.jpro'
+apply plugin: 'jpro-gradle-plugin'
 
 mainClassName = 'com.jpro.samples.nativescrolling.NativeScrollingSample'

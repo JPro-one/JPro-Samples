@@ -11,8 +11,8 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.sandec.jpro:jpro-plugin-gradle:$JPRO_VERSION"
-        classpath 'org.openjfx:javafx-plugin:0.0.13'
+        classpath "one.jpro:jpro-gradle-plugin:$JPRO_VERSION"
+        classpath 'org.openjfx:javafx-plugin:0.0.14'
     }
 }
 
@@ -42,6 +42,6 @@ compileJava {
 }
 
 
-apply plugin: 'com.sandec.jpro'
+apply plugin: 'jpro-gradle-plugin'
 
 mainClassName = 'com.jpro.samples.multifilehandler.MultiFileHandlerApp'
