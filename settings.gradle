@@ -1,3 +1,20 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        gradlePluginPortal()
+
+        maven {
+            url "https://sandec.jfrog.io/artifactory/repo"
+        }
+    }
+
+    dependencies {
+        classpath "one.jpro:jpro-gradle-plugin:$JPRO_VERSION"
+        classpath 'org.openjfx:javafx-plugin:0.0.14'
+    }
+}
+
 include "popups"
 include "filehandler"
 include "multifilehandler"
@@ -5,8 +22,9 @@ include "html-jpro"
 include "native-scrolling"
 include "pwa"
 include "website"
-include "ensemble:samples"
-include "ensemble:site"
+//include "ensemble:samples"
+//include "ensemble:site"
 include "auth0"
 include "suneditor"
 include "gps"
+include 'logging'

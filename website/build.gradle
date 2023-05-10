@@ -1,23 +1,4 @@
-
-
-buildscript {
-    repositories {
-        jcenter()
-        gradlePluginPortal()
-
-        maven {
-            url "https://sandec.jfrog.io/artifactory/repo"
-        }
-    }
-
-    dependencies {
-        classpath "one.jpro:jpro-gradle-plugin:$JPRO_VERSION"
-        classpath 'org.openjfx:javafx-plugin:0.0.14'
-    }
-}
-
 repositories {
-    jcenter()
     mavenCentral()
 }
 
@@ -26,7 +7,7 @@ apply plugin: 'application'
 apply plugin: 'org.openjfx.javafxplugin'
 
 javafx {
-    version = JAVAFX_VERSION
+    version = "$JAVAFX_VERSION"
     modules = [ 'javafx.base', 'javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web' ]
 }
 
