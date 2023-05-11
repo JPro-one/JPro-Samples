@@ -12,7 +12,7 @@ repositories {
 }
 
 javafx {
-    version = "17.0.7"
+    version = properties["JAVAFX_VERSION"] as String
     modules = listOf("javafx.graphics", "javafx.controls", "javafx.fxml", "javafx.media", "javafx.web")
 }
 
