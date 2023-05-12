@@ -19,7 +19,7 @@ javafx {
 dependencies {
     implementation("org.slf4j:slf4j-api:2.0.7")
     implementation("org.slf4j:jul-to-slf4j:2.0.7")
-    runtimeOnly("ch.qos.logback:logback-classic:1.4.7")
+    implementation("ch.qos.logback:logback-classic:1.4.7")
 
     testImplementation(platform("org.junit:junit-bom:5.9.3"))
     testImplementation("org.junit.jupiter:junit-jupiter")
