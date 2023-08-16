@@ -11,17 +11,21 @@ repositories {
     mavenCentral()
 }
 
+val JAVAFX_VERSION = properties["JAVAFX_VERSION"] as String
+val SLF4J_VERSION = properties["SLF4J_VERSION"] as String
+val LOGBACK_VERSION = properties["LOGBACK_VERSION"] as String
+val JUNIT_VERSION = properties["JUNIT_VERSION"] as String
+
 javafx {
-    version = properties["JAVAFX_VERSION"] as String
+    version = JAVAFX_VERSION
     modules = listOf("javafx.graphics", "javafx.controls", "javafx.fxml", "javafx.media", "javafx.web")
 }
 
 dependencies {
-    implementation("org.slf4j:slf4j-api:2.0.7")
-    implementation("org.slf4j:jul-to-slf4j:2.0.7")
-    implementation("ch.qos.logback:logback-classic:1.4.7")
+    implementation("org.slf4j:slf4j-api:$SLF4J_VERSION")
+    runtimeOnly("ch.qos.logback:logback-classic:$LOGBACK_VERSION")
 
-    testImplementation(platform("org.junit:junit-bom:5.9.3"))
+    testImplementation(platform("org.junit:junit-bom:$JUNIT_VERSION"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
