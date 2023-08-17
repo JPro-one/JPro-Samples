@@ -2,27 +2,22 @@ repositories {
     mavenCentral()
 }
 
-apply plugin: 'java'
 apply plugin: 'application'
-
 apply plugin: 'org.openjfx.javafxplugin'
 
 javafx {
     version = JAVAFX_VERSION
-    modules = [ 'javafx.base', 'javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web' ]
+    modules = [ 'javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web' ]
 }
-
-dependencies {
-}
-
 
 compileJava {
     sourceCompatibility = 11
     targetCompatibility = 11
 }
 
-
 apply plugin: 'jpro-gradle-plugin'
-
-
 mainClassName = 'com.jpro.samples.filehandler.FileHandlerApp'
+
+jpro {
+    javafxVersion = '17'
+}

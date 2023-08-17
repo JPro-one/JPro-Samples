@@ -12,7 +12,7 @@ javafx {
 }
 
 dependencies {
-    implementation "com.sandec.jpro:jpro-web-core:0.9.8-SNAPSHOT"
+    implementation "one.jpro:jpro-routing-core:$JPRO_ROUTING_VERSION"
 }
 
 

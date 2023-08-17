@@ -2,26 +2,23 @@ repositories {
     mavenCentral()
 }
 
-apply plugin: 'java'
 apply plugin: 'application'
-
 apply plugin: 'org.openjfx.javafxplugin'
 
 javafx {
     version = JAVAFX_VERSION
-    modules = [ 'javafx.base', 'javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web' ]
+    modules = [ 'javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web' ]
 }
 
 dependencies {
-    implementation 'com.sandec.jpro:jpro-web-core:0.8.9'
+    implementation "com.sandec.jpro:jpro-web-core:$JPRO_WEB_CORE_VERSION"
 
-    implementation 'com.auth0:java-jwt:3.17.0'
-    implementation 'com.auth0:jwks-rsa:0.18.0'
-    implementation 'com.auth0:auth0:1.31.0'
+    implementation "com.auth0:java-jwt:$JAVA_JWT_VERSION"
+    implementation "com.auth0:jwks-rsa:$JWKS_RSA_VERSION"
+    implementation "com.auth0:auth0:$AUTH0_VERSION"
 
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
+    implementation "com.fasterxml.jackson.core:jackson-databind:$JACKSON_DATABIND_VERSION"
 }
-
 
 compileJava {
     sourceCompatibility = 11
@@ -29,6 +26,5 @@ compileJava {
 }
 
 apply plugin: 'jpro-gradle-plugin'
-
 
 mainClassName = 'com.jpro.samples.auth0.Auth0Starter'
