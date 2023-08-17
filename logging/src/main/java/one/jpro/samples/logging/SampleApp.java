@@ -7,6 +7,11 @@ import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+/**
+ * Example application for custom logging configuration.
+ *
+ * @author Besmir Beqiri
+ */
 public class SampleApp extends Application {
 
     @Override

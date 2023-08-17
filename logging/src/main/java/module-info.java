@@ -1,3 +1,8 @@
+/**
+ * Module descriptor.
+ *
+ * @author Besmir Beqiri
+ */
 module one.jpro.samples.logging {
     requires javafx.controls;
     requires java.logging;

@@ -11,7 +11,7 @@
         <append>true</append>
         <immediateFlush>true</immediateFlush>
         <encoder>
-            <pattern>[configOnJVMStartup] %-4relative [%thread] %-5level %logger{35} -%kvp- %msg%n</pattern>
+            <pattern>[onJVMStartup] %-4relative [%thread] %-5level %logger{35} -%kvp- %msg%n</pattern>
         </encoder>
     </appender>
 
