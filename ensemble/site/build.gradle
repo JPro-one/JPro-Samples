@@ -1,6 +1,5 @@
 buildscript {
     repositories {
-        jcenter()
         gradlePluginPortal()
 
         maven {
@@ -9,20 +8,22 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.sandec.jpro:jpro-plugin-gradle:2022.1.8"
-        classpath 'org.openjfx:javafx-plugin:0.0.14'
-        classpath "com.javafxensemble.website:ensemble-gradle-plugin:0.1.0-SNAPSHOT"
+        classpath "one.jpro:jpro-gradle-plugin:$JPRO_VERSION"
+        classpath "org.openjfx:javafx-plugin:$JAVAFX_PLUGIN_VERSION"
+        classpath "com.javafxensemble.website:ensemble-gradle-plugin:$ENSEMBLE_GRADLE_PLUGIN_VERSION"
     }
 }
 
 repositories {
     jcenter()
 }
+
 apply plugin: 'ensemble'
 
 dependencies {
     compileOnly project(":ensemble:samples")
 }
+
 ensemble {
     log = true
     println("AAAAAAAA")
