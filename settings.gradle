@@ -11,7 +11,7 @@ buildscript {
 
     dependencies {
         classpath "one.jpro:jpro-gradle-plugin:$JPRO_VERSION"
-        classpath 'org.openjfx:javafx-plugin:0.0.14'
+        classpath "org.openjfx:javafx-plugin:$JAVAFX_PLUGIN_VERSION"
     }
 }
 

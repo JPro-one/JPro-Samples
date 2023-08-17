@@ -1,22 +1,3 @@
-
-/**
- ******************  Script Configuration ******************
- */
-buildscript {
-  repositories {
-    jcenter()
-
-    maven {
-      url "https://sandec.jfrog.io/artifactory/repo"
-    }
-  }
-
-  dependencies {
-    classpath "one.jpro:jpro-gradle-plugin:$JPRO_VERSION"
-  }
-}
-
-
 configure([project(':filehandler'),project(':popups'),project(':suneditor'),project(':gps')]) {
   apply plugin: 'java'
   apply plugin: 'maven-publish'
