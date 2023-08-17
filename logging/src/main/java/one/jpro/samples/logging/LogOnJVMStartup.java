@@ -23,7 +23,7 @@ public class LogOnJVMStartup {
         // redirect j.u.l. logging to SLF4J
         SLF4JBridgeHandler.removeHandlersForRootLogger();
 
-        String logbackFile = LogOnJVMStartup.class.getResource("/logback-it.xml").getFile();
+        String logbackFile = LogOnJVMStartup.class.getResource("/logback-sample.xml").getFile();
         loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
         loggerContext.reset();
         JoranConfigurator configurator = new JoranConfigurator();
