@@ -1,6 +1,5 @@
 package com.jpro.samples.pwa;
 
-import com.jpro.webapi.WebAPI;
 import fr.brouillard.oss.cssfx.CSSFX;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -13,7 +12,7 @@ import javafx.stage.Stage;
 public class PWAApp extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         CSSFX.start();
         PWAUtil pwa = new PWAUtil(primaryStage);
         VBox pin = new VBox();
