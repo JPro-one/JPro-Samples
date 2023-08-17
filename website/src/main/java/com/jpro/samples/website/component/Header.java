@@ -1,8 +1,8 @@
 package com.jpro.samples.website.component;
 
-import com.jpro.web.Util;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import one.jpro.routing.LinkUtil;
 
 public class Header extends HBox {
 
@@ -15,7 +15,7 @@ public class Header extends HBox {
     class HeaderLabel extends Label {
         public HeaderLabel(String x, String url) {
             super(x);
-            Util.setLink(this,url);
+            LinkUtil.setLink(this, url);
             getStyleClass().add("header-label");
 
         }
