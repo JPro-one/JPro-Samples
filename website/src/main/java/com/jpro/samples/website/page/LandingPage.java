@@ -1,10 +1,10 @@
 package com.jpro.samples.website.page;
 
 import com.jpro.samples.website.component.Header;
-import com.jpro.web.View;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import one.jpro.routing.View;
 
 public class LandingPage extends View {
 
