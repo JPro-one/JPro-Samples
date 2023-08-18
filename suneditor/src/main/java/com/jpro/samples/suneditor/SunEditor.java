@@ -8,6 +8,8 @@ import javafx.beans.property.StringProperty;
 import javafx.scene.layout.StackPane;
 import org.json.JSONTokener;
 
+import java.util.Objects;
+
 public class SunEditor extends StackPane {
 
     static int idCounter = 0;
@@ -37,13 +39,11 @@ public class SunEditor extends StackPane {
             webAPI.loadJSFile(getClass().getResource("/com/jpro/samples/suneditor/http/js/en.js"));
             htmlView.setContent("<textarea id=\"" + id + "\">"+textProperty.get()+"</textarea>");
             Platform.runLater(() -> {
-
                 webAPI.executeScript("var element = document.getElementById('"+id+"');" +
                         "console.log('element: ' + element);" +
                         "var editor = SUNEDITOR.create(element,{\n" +
                         "});" +
                         "jpro."+id+"=editor;");
-
 
                 webAPI.registerJavaFunction("callback1_"+id, str -> {
                     JSONTokener tockener = new JSONTokener(str);
@@ -54,11 +54,13 @@ public class SunEditor extends StackPane {
 
                     System.out.println("Got str: " + str2);
                 });
+
                 webAPI.executeScript("jpro."+id+".onChange = function(contents,core){" +
                         "  jpro.callback1_"+id+"(contents);" +
                         "};");
+
                 textProperty.addListener((ps,os,ns) -> {
-                    if(elementContent != ns) {
+                    if(!Objects.equals(elementContent, ns)) {
                         String script = "jpro."+id+".setContents(\""+ns.replace("\\","\\\\").replace("\"","\\\"")+"\");";
                         webAPI.executeScript(script);
                     }

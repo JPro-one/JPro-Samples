@@ -12,8 +12,7 @@ import javafx.stage.Stage;
 public class SunEditorSample extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
-        CSSFX.start();
+    public void start(Stage stage) {
         Label title = new Label("Suneditor:");
         title.getStyleClass().add("title");
         SunEditor sunEditor = new SunEditor();
@@ -26,5 +25,7 @@ public class SunEditorSample extends Application {
         root.getStylesheets().add(getClass().getResource("/com/jpro/samples/suneditor/css/suneditor.css").toString());
         stage.setScene(scene);
         stage.show();
+
+        CSSFX.start();
     }
 }

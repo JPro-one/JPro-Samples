@@ -13,7 +13,6 @@ public class PWAApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        CSSFX.start();
         PWAUtil pwa = new PWAUtil(primaryStage);
         VBox pin = new VBox();
         VBox info = new VBox();
@@ -22,9 +21,7 @@ public class PWAApp extends Application {
         pin.getChildren().add(info);
 
         Button installButton = new Button("Install as PWA");
-        installButton.onActionProperty().set((e) -> {
-            pwa.installPWA();
-        });
+        installButton.onActionProperty().set((e) -> pwa.installPWA());
 
         Scene scene = new Scene(new StackPane(pin));
         scene.getStylesheets().add("/com/jpro/samples/pwa/app.css");
@@ -44,5 +41,7 @@ public class PWAApp extends Application {
                 info.getChildren().add(new Label("Your browser doesn't support PWA!"));
             }
         });
+
+        CSSFX.start();
     }
 }
