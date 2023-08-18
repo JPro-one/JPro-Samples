@@ -5,7 +5,6 @@
 This project contains multiple samples for [jpro, which enables javafx in the web.](https://www.jpro.one/)
 
 
-
 Samples:
 
 
@@ -25,7 +24,6 @@ Samples:
 
 # How to start #
 
-
 ```
 ./gradlew popups:jproRun
 ./gradlew multifilehandler:jproRun
@@ -36,6 +34,7 @@ Samples:
 ./gradlew auth0:jproRun # Read the Readme: https://github.com/JPro-one/JPro-Samples/tree/master/auth0
 ./gradlew suneditor:run
 ./gradlew gps:run
+./gradlew logging:jproRun
 ```
 
 
