@@ -7,6 +7,7 @@ import com.jpro.web.WebApp;
 import javafx.stage.Stage;
 
 public class Auth0App extends WebApp {
+
     public Auth0App(Stage stage) {
         super(stage);
 
