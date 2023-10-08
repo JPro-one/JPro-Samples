@@ -1,8 +1,6 @@
 package com.jpro.samples.auth0.auth;
 
 import com.auth0.client.auth.AuthAPI;
-import com.auth0.jwk.JwkProvider;
-import com.auth0.jwk.JwkProviderBuilder;
 
 public class AuthUtil {
     static String CLIENT_ID = "???";
@@ -12,8 +10,7 @@ public class AuthUtil {
     AuthAPI client;
 
     public AuthUtil() {
-        JwkProvider jwkProvider = new JwkProviderBuilder(DOMAIN).build();
-        client = new AuthAPI(DOMAIN, CLIENT_ID, CLIENT_SECRET);
+        client = AuthAPI.newBuilder(DOMAIN, CLIENT_ID, CLIENT_SECRET).build();
     }
 
     public String authURL() {

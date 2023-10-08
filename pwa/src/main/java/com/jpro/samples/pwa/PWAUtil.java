@@ -3,15 +3,14 @@ package com.jpro.samples.pwa;
 import com.jpro.webapi.WebAPI;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.util.Optional;
 
 public class PWAUtil {
 
-    private WebAPI webapi;
-    private ObjectProperty<Optional<Boolean>> isInstalledProperty = new SimpleObjectProperty(Optional.empty());
+    private final WebAPI webapi;
+    private final ObjectProperty<Optional<Boolean>> isInstalledProperty = new SimpleObjectProperty(Optional.empty());
 
     public PWAUtil(Stage stage) {
         this(WebAPI.getWebAPI(stage));

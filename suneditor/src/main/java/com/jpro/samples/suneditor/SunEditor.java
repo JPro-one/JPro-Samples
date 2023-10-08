@@ -9,6 +9,8 @@ import javafx.beans.property.StringProperty;
 import javafx.scene.layout.StackPane;
 import org.json.JSONTokener;
 
+import java.util.Objects;
+
 public class SunEditor extends StackPane {
 
 
