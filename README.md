@@ -35,8 +35,8 @@ Samples:
 ./gradlew native-scrolling:jproRun
 ./gradlew website:jproRun
 ./gradlew auth0:jproRun # Read the Readme: https://github.com/JPro-one/JPro-Samples/tree/master/auth0
-./gradlew suneditor:run
-./gradlew gps:run
+./gradlew suneditor:jproRun
+./gradlew gps:jproRun
 ```
 
 
