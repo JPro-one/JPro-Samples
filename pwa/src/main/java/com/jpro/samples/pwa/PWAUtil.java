@@ -10,11 +10,12 @@ import java.util.Optional;
 public class PWAUtil {
 
     private final WebAPI webapi;
-    private final ObjectProperty<Optional<Boolean>> isInstalledProperty = new SimpleObjectProperty(Optional.empty());
+    private final ObjectProperty<Optional<Boolean>> isInstalledProperty = new SimpleObjectProperty<>(Optional.empty());
 
     public PWAUtil(Stage stage) {
         this(WebAPI.getWebAPI(stage));
     }
+
     public PWAUtil(WebAPI webapi) {
         this.webapi = webapi;
 

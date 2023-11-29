@@ -28,16 +28,16 @@ public class PWAApp extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        pwa.installed().addListener((p,o,n) -> {
+        pwa.installed().addListener((p, o, n) -> {
             info.getChildren().clear();
             n.ifPresent(installed -> {
-                if(installed) {
+                if (installed) {
                     info.getChildren().add(new Label("Your browser doesn't support PWA, or the App is already installed"));
                 } else {
                     info.getChildren().add(installButton);
                 }
             });
-            if(n.isEmpty()) {
+            if (n.isEmpty()) {
                 info.getChildren().add(new Label("Your browser doesn't support PWA!"));
             }
         });

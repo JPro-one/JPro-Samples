@@ -3,13 +3,10 @@ package com.jpro.samples.suneditor;
 import com.jpro.webapi.HTMLView;
 import com.jpro.webapi.JSVariable;
 import com.jpro.webapi.WebAPI;
-import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.layout.StackPane;
 import org.json.JSONTokener;
-
-import java.util.Objects;
 
 public class SunEditor extends StackPane {
 
@@ -35,36 +32,36 @@ public class SunEditor extends StackPane {
             webAPI.loadJSFile(getClass().getResource("/com/jpro/samples/suneditor/http/js/suneditor.min.js"));
             webAPI.loadJSFile(getClass().getResource("/com/jpro/samples/suneditor/http/js/en.js"));
 
-            htmlView.setContent("<textarea>"+textProperty.get()+"</textarea>");
+            htmlView.setContent("<textarea>" + textProperty.get() + "</textarea>");
 
             JSVariable textarea = webAPI.getHTMLViewElement(htmlView);
 
             sunElem = webAPI.executeScriptWithVariable("SUNEDITOR.create(" + textarea.getName() + ",{});");
 
             callback = webAPI.registerJavaFunction(str -> {
-                JSONTokener tockener = new JSONTokener(str);
-                tockener.nextClean();
-                String str2 = tockener.nextString('"');
+                JSONTokener tokener = new JSONTokener(str);
+                tokener.nextClean();
+                String str2 = tokener.nextString('"');
                 elementContent = str2;
                 textProperty.set(str2);
             });
-            webAPI.executeScript(sunElem.getName()+".onChange = function(contents,core){" +
-                    "  " + callback.getName()+"(contents);" +
+            webAPI.executeScript(sunElem.getName() + ".onChange = function(contents,core){" +
+                    "  " + callback.getName() + "(contents);" +
                     "};");
-            textProperty.addListener((ps,os,ns) -> {
-                if(elementContent != ns) {
-                    String script = sunElem.getName()+".setContents(\""+ns.replace("\\","\\\\").replace("\"","\\\"")+"\");";
+            textProperty.addListener((ps, os, ns) -> {
+                if (elementContent != ns) {
+                    String script = sunElem.getName() + ".setContents(\"" + ns.replace("\\", "\\\\").replace("\"", "\\\"") + "\");";
                     webAPI.executeScript(script);
                 }
             });
 
-            widthProperty().addListener((p,o,n) -> updateWH(sunElem));
-            heightProperty().addListener((p,o,n) -> updateWH(sunElem));
+            widthProperty().addListener((p, o, n) -> updateWH(sunElem));
+            heightProperty().addListener((p, o, n) -> updateWH(sunElem));
             updateWH(sunElem);
         });
     }
 
     private void updateWH(JSVariable sunElem) {
-        webAPI.executeScript(sunElem.getName()+".setOptions({height: " + this.getHeight() + ", width: " + this.getWidth() + "});");
+        webAPI.executeScript(sunElem.getName() + ".setOptions({height: " + this.getHeight() + ", width: " + this.getWidth() + "});");
     }
 }

@@ -2,7 +2,6 @@ package com.jpro.samples.gps;
 
 import com.jpro.webapi.WebAPI;
 import org.json.JSONObject;
-import org.json.JSONTokener;
 
 import java.util.function.Consumer;
 

@@ -2,21 +2,16 @@ package com.jpro.samples.gps;
 
 import com.jpro.webapi.HTMLView;
 import com.jpro.webapi.JProApplication;
-import com.jpro.webapi.WebAPI;
 import fr.brouillard.oss.cssfx.CSSFX;
-import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class GPSSample extends JProApplication {
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
 
         Label header = new Label("Geolocation Sample");
         header.getStyleClass().add("header");
@@ -40,22 +35,21 @@ public class GPSSample extends JProApplication {
             pin.getChildren().clear();
             pin.getChildren().add(new ProgressIndicator());
             new GPSUtil(this.getWebAPI()).requestData(result -> {
-                if(result == null) {
+                if (result == null) {
                     Label errorLabel = new Label("User denied access to gps data!");
                     errorLabel.getStyleClass().add("error");
                     pin.getChildren().clear();
                     pin.getChildren().add(errorLabel);
                 } else {
                     pin.getChildren().clear();
-                    pin.getChildren().add(createMap(result.longitude,result.latitude));
+                    pin.getChildren().add(createMap(result.longitude, result.latitude));
                 }
             });
         });
     }
 
     HTMLView createMap(double longitude, double latitude) {
-
-        HTMLView view = new HTMLView(createContent(longitude,latitude));
+        HTMLView view = new HTMLView(createContent(longitude, latitude));
         view.setPrefWidth(450);
         view.setPrefHeight(450);
 
@@ -66,8 +60,8 @@ public class GPSSample extends JProApplication {
         double off = 0.002;
         return "<iframe style=\"width:100%; height:100%\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"" +
                 "https://www.openstreetmap.org/export/embed.html?" +
-                "bbox="+(longitude-off)+"%2C"+(latitude-off)+"%2C"+(longitude+off)+"%2C"+(latitude+off)+"&amp;layer=mapnik" +
-                "&amp;marker="+latitude+"%2C" + longitude +
+                "bbox=" + (longitude - off) + "%2C" + (latitude - off) + "%2C" + (longitude + off) + "%2C" + (latitude + off) + "&amp;layer=mapnik" +
+                "&amp;marker=" + latitude + "%2C" + longitude +
                 "\" style=\"border: 1px solid black\"></iframe>";
 
     }

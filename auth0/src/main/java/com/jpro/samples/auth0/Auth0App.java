@@ -14,7 +14,7 @@ public class Auth0App extends WebApp {
         getStylesheets().add("/com/jpro/samples/auth0/app.css");
 
         addRouteJava(s -> {
-            if(s.contains("code=")) {
+            if (s.contains("code=")) {
                 String email = new AuthUtil().verify(s.substring(s.lastIndexOf("code=") + "code=".length()));
                 return new LoggedInPage(email);
             } else {
@@ -22,8 +22,6 @@ public class Auth0App extends WebApp {
             }
         });
 
-        addRouteJava(s -> {
-            return new LandingPage();
-        });
+        addRouteJava(s -> new LandingPage());
     }
 }

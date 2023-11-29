@@ -16,7 +16,7 @@ public class SunEditorSample extends Application {
         Label title = new Label("Suneditor:");
         title.getStyleClass().add("title");
         SunEditor sunEditor = new SunEditor();
-        VBox vbox = new VBox(title,sunEditor);
+        VBox vbox = new VBox(title, sunEditor);
         VBox.setVgrow(sunEditor, Priority.ALWAYS);
         vbox.getStyleClass().add("vbox");
         StackPane root = new StackPane(vbox);

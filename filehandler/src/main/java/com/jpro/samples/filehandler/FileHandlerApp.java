@@ -1,17 +1,16 @@
 package com.jpro.samples.filehandler;
 
 import com.jpro.webapi.JProApplication;
-import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class FileHandlerApp extends JProApplication {
 
-    @Override public void start(Stage stage) {
+    @Override
+    public void start(Stage stage) {
 
         FileHandler fileHandler = new FileHandler();
 
@@ -25,8 +24,8 @@ public class FileHandlerApp extends JProApplication {
                 e.printStackTrace();
             }
         });
-        fileHandler.fileHandler.progressProperty().addListener((obs,oldV,newV) -> {
-            if(newV.doubleValue() == 1.0) {
+        fileHandler.fileHandler.progressProperty().addListener((obs, oldV, newV) -> {
+            if (newV.doubleValue() == 1.0) {
                 downloadButton.setDisable(false);
             }
         });

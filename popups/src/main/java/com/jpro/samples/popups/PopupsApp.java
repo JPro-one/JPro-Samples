@@ -4,7 +4,6 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
 import com.jpro.webapi.JProApplication;
-import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,10 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
 
 public class PopupsApp extends JProApplication {
@@ -25,14 +21,12 @@ public class PopupsApp extends JProApplication {
 
     public static final String CONTENT_PANE = "ContentPane";
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         launch(args);
     }
 
     @Override
-    public void start(Stage stage)
-    {
+    public void start(Stage stage) {
         stackpane = new StackPane();
         JFXButton buttonJFoenix = new JFXButton("JFoenix");
         buttonJFoenix.setButtonType(JFXButton.ButtonType.RAISED);
@@ -68,13 +62,11 @@ public class PopupsApp extends JProApplication {
             getWebAPI().openStageAsPopup(createTestStage());
         });
 
-        VBox vbox = new VBox(buttonJFoenix, controlsFXNotifications(), ownDialogeButton(), stageAsTabButton, stageAsPopupButton);
+        VBox vbox = new VBox(buttonJFoenix, controlsFXNotifications(), ownDialogButton(), stageAsTabButton, stageAsPopupButton);
         vbox.setAlignment(Pos.CENTER);
         vbox.setSpacing(20);
 
         stackpane.getChildren().add(vbox);
-
-
 
         Scene scene = new Scene(stackpane, 500, 500);
 
@@ -82,10 +74,8 @@ public class PopupsApp extends JProApplication {
         stage.show();
     }
 
-
     Button controlsFXNotifications() {
         Button button = new Button("ControlsFX");
-
 
         button.setOnAction(e -> {
             Notifications notificationBuilder = Notifications.create()
@@ -99,11 +89,9 @@ public class PopupsApp extends JProApplication {
         return button;
     }
 
-    Parent ownDialogeButton() {
+    Parent ownDialogButton() {
         Button btn = new Button("Based on StackPane");
-        btn.setOnAction(e -> {
-            new OwnPopup(stackpane, "My own popup!").show();
-        });
+        btn.setOnAction(e -> new OwnPopup(stackpane, "My own popup!").show());
         return btn;
     }
 
@@ -114,6 +102,5 @@ public class PopupsApp extends JProApplication {
         stage.setScene(new Scene(label));
         return stage;
     }
-
 }
 

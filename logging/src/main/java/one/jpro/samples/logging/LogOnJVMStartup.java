@@ -14,6 +14,7 @@ import java.util.logging.*;
  * This is a simple class that will be executed on JVM startup.
  *
  * @author Besmir Beqiri
+ * @author Florian Kirmaier
  */
 public class LogOnJVMStartup {
     public static LoggerContext loggerContext = null;

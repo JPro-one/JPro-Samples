@@ -27,7 +27,7 @@ public class AuthUtil {
     public String verify(String code) {
         System.out.println("Got code: " + code);
         try {
-            var tokenRequest = client.exchangeCode(code,"http://localhost:8080/");
+            var tokenRequest = client.exchangeCode(code, "http://localhost:8080/");
             var token = tokenRequest.execute();
             var userInfo = client.userInfo(token.toString()).execute();
 

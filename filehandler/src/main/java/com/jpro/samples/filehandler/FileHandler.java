@@ -16,24 +16,22 @@ public class FileHandler extends Label {
 
         fileHandler.setSelectFileOnClick(true);
         fileHandler.setSelectFileOnDrop(true);
-        fileHandler.fileDragOverProperty().addListener((o,oldV,newV) -> {
-            if(newV) {
+        fileHandler.fileDragOverProperty().addListener((o, oldV, newV) -> {
+            if (newV) {
                 getStyleClass().add("file-drag");
             } else {
-                if(getStyleClass().contains("file-drag")) {
-                    getStyleClass().remove("file-drag");
-                }
+                getStyleClass().remove("file-drag");
             }
         });
         fileHandler.setOnFileSelected((file) -> {
             updateText();
             fileHandler.uploadFile();
         });
-        fileHandler.uploadedFileProperty().addListener((p,oldV,newV) -> {
+        fileHandler.uploadedFileProperty().addListener((p, oldV, newV) -> {
             System.out.println("Got uploaded file: " + newV);
         });
 
-        fileHandler.progressProperty().addListener((obs,oldV,newV) -> {
+        fileHandler.progressProperty().addListener((obs, oldV, newV) -> {
             updateText();
         });
     }

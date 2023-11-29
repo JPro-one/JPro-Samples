@@ -3,7 +3,7 @@ package com.jpro.samples.multifilehandler;
 import com.jpro.webapi.JProApplication;
 import com.jpro.webapi.WebAPI;
 import fr.brouillard.oss.cssfx.CSSFX;
-import javafx.application.Application;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -23,9 +23,9 @@ import java.util.zip.ZipOutputStream;
 public class MultiFileHandlerApp extends JProApplication {
 
     @Override
-    public void start(javafx.stage.Stage primaryStage) throws Exception {
+    public void start(javafx.stage.Stage primaryStage) {
         CSSFX.start();
-        javafx.scene.Scene scene = new javafx.scene.Scene(new MultiFileHandler());
+        Scene scene = new Scene(new MultiFileHandler());
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -37,8 +37,10 @@ public class MultiFileHandlerApp extends JProApplication {
     class MultiFileHandler extends VBox {
 
         List<WebAPI.JSFile> jsFiles = new ArrayList<>();
+
         public MultiFileHandler() {
-            getStylesheets().add(getClass().getResource("/com/jpro/samples/multifilehandler/multifilehandler.css").toExternalForm());
+            getStylesheets().add(getClass()
+                    .getResource("/com/jpro/samples/multifilehandler/multifilehandler.css").toExternalForm());
             getStyleClass().add("vbox");
 
             Label label = new Label("MultiFileHandler");
@@ -64,9 +66,10 @@ public class MultiFileHandlerApp extends JProApplication {
 
             downloadButton.setOnAction(e -> {
 
-                List<CompletableFuture<File>> filesF = jsFiles.stream().map(f -> f.getUploadedFileFuture()).collect(Collectors.toList());
+                List<CompletableFuture<File>> filesF = jsFiles.stream()
+                        .map(WebAPI.JSFile::getUploadedFileFuture).toList();
                 CompletableFuture.allOf(filesF.toArray(new CompletableFuture[filesF.size()])).thenRun(() -> {
-                    List<File> files = filesF.stream().map(f -> f.join()).collect(Collectors.toList());
+                    List<File> files = filesF.stream().map(CompletableFuture::join).collect(Collectors.toList());
                     // Create a zip file from the files
                     File zipFile = new File("download.zip");
                     try {
@@ -80,16 +83,13 @@ public class MultiFileHandlerApp extends JProApplication {
             });
 
 
-
             WebAPI.getWebAPI(this, webAPI -> {
                 WebAPI.MultiFileUploader fuploader = webAPI.makeMultiFileUploadNode(filesContainer);
-                fuploader.fileDragOverProperty().addListener((o,oldV,newV) -> {
-                    if(newV) {
+                fuploader.fileDragOverProperty().addListener((o, oldV, newV) -> {
+                    if (newV) {
                         filesContainer.getStyleClass().add("file-drag");
                     } else {
-                        if(filesContainer.getStyleClass().contains("file-drag")) {
-                            filesContainer.getStyleClass().remove("file-drag");
-                        }
+                        filesContainer.getStyleClass().remove("file-drag");
                     }
                 });
                 fuploader.setSelectFileOnClick(true);
@@ -106,7 +106,7 @@ public class MultiFileHandlerApp extends JProApplication {
         }
     }
 
-    class JSFileInfoCell extends HBox {
+    static class JSFileInfoCell extends HBox {
         JSFileInfoCell(WebAPI.JSFile jsfile) {
             getStyleClass().add("mf-file-cell");
             Label label = new Label(jsfile.getFilename());
@@ -121,15 +121,13 @@ public class MultiFileHandlerApp extends JProApplication {
             getChildren().add(sizeLabel);
             long size = jsfile.getFileSize();
             // in kb or mb
-            if(size > 1024*1024) {
-                sizeLabel.setText(String.format("%.2f MB", size/(1024.0*1024.0)));
-            } else if(size > 1024) {
-                sizeLabel.setText(String.format("%.2f KB", size/(1024.0)));
+            if (size > 1024 * 1024) {
+                sizeLabel.setText(String.format("%.2f MB", size / (1024.0 * 1024.0)));
+            } else if (size > 1024) {
+                sizeLabel.setText(String.format("%.2f KB", size / (1024.0)));
             } else {
                 sizeLabel.setText(String.format("%d B", size));
             }
-
-
         }
     }
 
