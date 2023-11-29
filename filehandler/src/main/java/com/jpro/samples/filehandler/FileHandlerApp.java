@@ -11,26 +11,26 @@ public class FileHandlerApp extends JProApplication {
 
     @Override
     public void start(Stage stage) {
-
-        FileHandler fileHandler = new FileHandler();
-
+        FileHandlerNode fileHandlerNode = new FileHandlerNode();
 
         Button downloadButton = new Button("Download");
         downloadButton.setDisable(true);
         downloadButton.setOnAction(event -> {
             try {
-                getWebAPI().downloadURL(fileHandler.fileHandler.getUploadedFile().toURI().toURL());
+                var url = fileHandlerNode.getFileHandler().getUploadedFile().toURI().toURL();
+                getWebAPI().downloadURL(url);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
-        fileHandler.fileHandler.progressProperty().addListener((obs, oldV, newV) -> {
+
+        fileHandlerNode.getFileHandler().progressProperty().addListener((obs, oldV, newV) -> {
             if (newV.doubleValue() == 1.0) {
                 downloadButton.setDisable(false);
             }
         });
 
-        VBox root = new VBox(fileHandler, downloadButton);
+        VBox root = new VBox(fileHandlerNode, downloadButton);
         root.setSpacing(50);
         root.setAlignment(Pos.CENTER);
         Scene scene = new Scene(root, 500, 500);

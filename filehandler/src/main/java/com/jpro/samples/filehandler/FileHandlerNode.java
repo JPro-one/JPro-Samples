@@ -3,11 +3,11 @@ package com.jpro.samples.filehandler;
 import com.jpro.webapi.WebAPI;
 import javafx.scene.control.Label;
 
-public class FileHandler extends Label {
+public class FileHandlerNode extends Label {
 
-    public WebAPI.FileUploader fileHandler = null;
+    private WebAPI.FileUploader fileHandler = null;
 
-    FileHandler() {
+    FileHandlerNode() {
         setText("Click or Drop File");
         getStyleClass().add("file-handler");
         setWrapText(true);
@@ -36,9 +36,12 @@ public class FileHandler extends Label {
         });
     }
 
+    public WebAPI.FileUploader getFileHandler() {
+        return fileHandler;
+    }
+
     private void updateText() {
-        String percentages = "";
-        percentages = (int) (fileHandler.getProgress() * 100) + "%";
+        String percentages = " " + (int) (fileHandler.getProgress() * 100) + "%";
         setText(fileHandler.selectedFileProperty().getValue() + percentages);
     }
 
