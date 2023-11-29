@@ -1,32 +1,43 @@
-configure([project(':filehandler'),project(':popups'),project(':suneditor'),project(':gps')]) {
-  apply plugin: 'java'
-  apply plugin: 'maven-publish'
+configure([project(':auth0'), project(':filehandler'), project(':gps'), project(':html-jpro'), project(':logging'),
+           project(':multifilehandler'), project(':native-scrolling'), project(':popups'), project(':pwa'),
+           project(':suneditor'), project(':website')]) {
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
 
-  java {
-    withSourcesJar()
-  }
-
-  publishing {
-    publications {
-      mavenJava(MavenPublication) {
-        from components.java
-        groupId "one.jpro.samples"
-        artifactId project.name
-        version JPRO_SAMPLES_VERSION
-      }
-    }
     java {
-      withSourcesJar()
+        withSourcesJar()
     }
+
+    compileJava {
+        sourceCompatibility = 17
+        targetCompatibility = 17
+    }
+
     repositories {
-      maven {
-        name = "artifactory"
-        url = "https://sandec.jfrog.io/artifactory/repo"
-        credentials {
-          username System.getenv("SANDEC_ARTIFACTORY_USERNAME")
-          password System.getenv("SANDEC_ARTIFACTORY_PASSWORD")
-        }
-      }
+        mavenCentral()
     }
-  }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+                groupId "one.jpro.samples"
+                artifactId project.name
+                version JPRO_SAMPLES_VERSION
+            }
+        }
+        java {
+            withSourcesJar()
+        }
+        repositories {
+            maven {
+                name = "artifactory"
+                url = "https://sandec.jfrog.io/artifactory/repo"
+                credentials {
+                    username System.getenv("SANDEC_ARTIFACTORY_USERNAME")
+                    password System.getenv("SANDEC_ARTIFACTORY_PASSWORD")
+                }
+            }
+        }
+    }
 }

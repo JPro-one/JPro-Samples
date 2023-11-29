@@ -1,25 +1,15 @@
-repositories {
-    mavenCentral()
-}
-
 apply plugin: 'application'
 apply plugin: 'org.openjfx.javafxplugin'
+apply plugin: 'jpro-gradle-plugin'
 
 javafx {
     version = JAVAFX_VERSION
-    modules = [ 'javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web' ]
+    modules = ['javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web']
 }
 
 dependencies {
     implementation "fr.brouillard.oss:cssfx:$CSSFX_VERSION"
     implementation "org.json:json:$JSON_VERSION"
 }
-
-compileJava {
-    sourceCompatibility = 11
-    targetCompatibility = 11
-}
-
-apply plugin: 'jpro-gradle-plugin'
 
 mainClassName = 'com.jpro.samples.suneditor.SunEditorSample'

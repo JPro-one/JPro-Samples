@@ -1,9 +1,6 @@
-repositories {
-    mavenCentral()
-}
-
 apply plugin: 'application'
 apply plugin: 'org.openjfx.javafxplugin'
+apply plugin: 'jpro-gradle-plugin'
 
 javafx {
     version = JAVAFX_VERSION
@@ -14,13 +11,6 @@ dependencies {
     implementation "org.apache.commons:commons-text:$COMMONS_TEXT_VERSION"
     implementation "org.json:json:$JSON_VERSION"
 }
-
-compileJava {
-    sourceCompatibility = 11
-    targetCompatibility = 11
-}
-
-apply plugin: 'jpro-gradle-plugin'
 
 jpro {
     openingPath = "/html-jpro.html"

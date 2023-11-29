@@ -26,7 +26,6 @@ dependencies {
 
 ensemble {
     log = true
-    println("AAAAAAAA")
     includeProject("jpro-samples", project(":ensemble:samples"))
 }
 
