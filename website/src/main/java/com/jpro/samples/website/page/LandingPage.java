@@ -4,7 +4,7 @@ import com.jpro.samples.website.component.Header;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import one.jpro.routing.View;
+import one.jpro.platform.routing.View;
 
 public class LandingPage extends View {
 

@@ -3,11 +3,11 @@ package com.jpro.samples.website;
 
 import com.jpro.samples.website.page.LandingPage;
 import com.jpro.samples.website.page.SubPage;
-import one.jpro.routing.Route;
-import one.jpro.routing.RouteApp;
+import one.jpro.platform.routing.Route;
+import one.jpro.platform.routing.RouteApp;
 
-import static one.jpro.routing.RouteUtils.get;
-import static one.jpro.routing.RouteUtils.redirect;
+import static one.jpro.platform.routing.RouteUtils.get;
+import static one.jpro.platform.routing.RouteUtils.redirect;
 
 public class HelloJProApp extends RouteApp {
 

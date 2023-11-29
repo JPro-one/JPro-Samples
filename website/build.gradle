@@ -12,7 +12,7 @@ javafx {
 }
 
 dependencies {
-    implementation "one.jpro:jpro-routing-core:$JPRO_ROUTING_VERSION"
+    implementation "one.jpro.platform:jpro-routing-core:$JPRO_PLATFORM_VERSION"
 }
 
 

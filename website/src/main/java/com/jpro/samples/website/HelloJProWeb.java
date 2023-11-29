@@ -2,7 +2,7 @@ package com.jpro.samples.website;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import one.jpro.routing.sessionmanager.SessionManager;
+import one.jpro.platform.routing.sessionmanager.SessionManager;
 
 public class HelloJProWeb extends Application {
 

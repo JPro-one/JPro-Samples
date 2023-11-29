@@ -2,7 +2,7 @@ package com.jpro.samples.website.component;
 
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import one.jpro.routing.LinkUtil;
+import one.jpro.platform.routing.LinkUtil;
 
 public class Header extends HBox {
 
